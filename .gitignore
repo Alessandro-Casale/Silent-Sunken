@@ -6,3 +6,4 @@ out/
 *.iml
 .idea_modules/
 run
+generated/resources/.cache
