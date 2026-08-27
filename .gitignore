@@ -6,4 +6,5 @@ out/
 *.iml
 .idea_modules/
 run
-generated/resources/.cache
+src/generated/resources/.cache/
+_to_delete_old_gradle_groovy_files/
