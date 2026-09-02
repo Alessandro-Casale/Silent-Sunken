@@ -1,0 +1,8 @@
+{
+  "unlock_sounds": ["minecraft:block.note_block.banjo"],
+  "instructions": "This crate is locked and waiting for a sound. Look for a Note Block sitting on a Hay Bale somewhere in these ruins. It is tuned to Banjo. Play it and the crate will open.",
+  "hint_items": {
+    "TOP": "minecraft:note_block",
+    "BOTTOM": "minecraft:hay_block"
+  }
+}

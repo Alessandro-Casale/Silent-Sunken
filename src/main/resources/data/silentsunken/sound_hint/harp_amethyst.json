@@ -1,0 +1,8 @@
+{
+  "unlock_sounds": ["minecraft:block.note_block.harp"],
+  "instructions": "This crate stays shut until it hears its sound. Search these ruins for a Note Block resting on Amethyst Block. It is tuned to Harp. Play it to unlock the crate.",
+  "hint_items": {
+    "TOP": "minecraft:note_block",
+    "BOTTOM": "minecraft:amethyst_block"
+  }
+}
