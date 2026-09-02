@@ -1,0 +1,15 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "frequency": 0.7,
+    "salt": 984712,
+    "separation": 8,
+    "spacing": 20
+  },
+  "structures": [
+    {
+      "structure": "silentsunken:ruins",
+      "weight": 1
+    }
+  ]
+}

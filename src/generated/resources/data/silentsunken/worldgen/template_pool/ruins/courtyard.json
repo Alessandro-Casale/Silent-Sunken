@@ -1,0 +1,32 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "silentsunken:ruins/courtyard_amethyst",
+        "processors": "silentsunken:ruins_courtyard_props",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "silentsunken:ruins/courtyard_copper",
+        "processors": "silentsunken:ruins_courtyard_props",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "silentsunken:ruins/courtyard_hay_bale",
+        "processors": "silentsunken:ruins_courtyard_props",
+        "projection": "rigid"
+      },
+      "weight": 1
+    }
+  ],
+  "fallback": "minecraft:empty"
+}
