@@ -1,0 +1,8 @@
+{
+  "unlock_sounds": ["minecraft:block.note_block.trumpet"],
+  "instructions": "This crate needs to hear a sound before it opens. Somewhere in these ruins there is a Note Block on a Copper Block. It is tuned to Trumpet. Find it and play it.",
+  "hint_items": {
+    "TOP": "minecraft:note_block",
+    "BOTTOM": "minecraft:copper_block"
+  }
+}

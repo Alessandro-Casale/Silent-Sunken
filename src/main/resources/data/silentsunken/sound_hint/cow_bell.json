@@ -1,0 +1,8 @@
+{
+  "unlock_sounds": ["minecraft:block.note_block.cow_bell"],
+  "instructions": "This crate stays shut until it hears its sound. Search these ruins for a Note Block resting on Soul Sand. It is tuned to Cow Bell. Play it to unlock the crate.",
+  "hint_items": {
+    "TOP": "minecraft:note_block",
+    "BOTTOM": "minecraft:soul_sand"
+  }
+}

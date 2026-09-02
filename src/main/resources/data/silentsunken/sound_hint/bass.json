@@ -1,0 +1,8 @@
+{
+  "unlock_sounds": ["minecraft:block.note_block.bass"],
+  "instructions": "This crate is locked. It will only open when it hears the right sound. Somewhere in these ruins there is a Note Block on top of a Wood block. It is tuned to Bass. Play it to open the crate.",
+  "hint_items": {
+    "TOP": "minecraft:note_block",
+    "BOTTOM": "minecraft:oak_planks"
+  }
+}

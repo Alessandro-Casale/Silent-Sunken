@@ -1,0 +1,8 @@
+{
+  "unlock_sounds": ["minecraft:block.note_block.bell"],
+  "instructions": "This crate will not open until it hears the right sound. Somewhere nearby there is a Note Block on a Gold Block. It is tuned to Bell. Find it and play it.",
+  "hint_items": {
+    "TOP": "minecraft:note_block",
+    "BOTTOM": "minecraft:gold_block"
+  }
+}
