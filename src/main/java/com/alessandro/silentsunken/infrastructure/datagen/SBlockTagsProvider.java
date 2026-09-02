@@ -20,8 +20,8 @@ public class SBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(SilentBlocks.RESONANT_STONE.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(SilentBlocks.RESONANT_STONE.get());
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(SilentBlocks.RESONANT_CRYSTAL_ORE.get());
+        tag(BlockTags.NEEDS_STONE_TOOL).add(SilentBlocks.RESONANT_CRYSTAL_ORE.get());
 
         tag(SilentTags.CLICKABLE_WITH_RESONANT_HAMMER)
             .add(Blocks.COBBLESTONE)
@@ -30,6 +30,6 @@ public class SBlockTagsProvider extends BlockTagsProvider {
             .add(Blocks.DEEPSLATE);
 
         tag(SilentTags.DISCOVERABLE_WITH_SCAN_SESSION)
-            .add(SilentBlocks.RESONANT_STONE.get());
+            .add(SilentBlocks.RESONANT_CRYSTAL_ORE.get());
     }
 }
