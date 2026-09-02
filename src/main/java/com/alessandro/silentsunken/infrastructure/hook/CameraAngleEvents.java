@@ -1,4 +1,4 @@
-package com.alessandro.silentsunken.infrastructure.hook.fx;
+package com.alessandro.silentsunken.infrastructure.hook;
 
 import com.alessandro.silentsunken.SilentSunken;
 import com.alessandro.silentsunken.engine.SilentClientManager;
