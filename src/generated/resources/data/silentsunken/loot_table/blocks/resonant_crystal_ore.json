@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "silentsunken:resonant_stone"
+          "name": "silentsunken:resonant_crystal_ore"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "silentsunken:blocks/resonant_stone"
+  "random_sequence": "silentsunken:blocks/resonant_crystal_ore"
 }
