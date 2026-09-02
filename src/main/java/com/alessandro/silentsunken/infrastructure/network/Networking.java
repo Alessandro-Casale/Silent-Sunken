@@ -4,6 +4,7 @@ import com.alessandro.silentsunken.SilentSunken;
 import com.alessandro.silentsunken.api.nullability.NotNullParams;
 import com.alessandro.silentsunken.api.nullability.Nullable;
 import com.alessandro.silentsunken.infrastructure.network.packet.HighlightBlocksS2C;
+import com.alessandro.silentsunken.infrastructure.network.packet.ShowHintToastS2C;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -20,6 +21,7 @@ public class Networking {
         var registrar = event.registrar("1.0.0").executesOn(HandlerThread.NETWORK);
 
         registrar.playToClient(HighlightBlocksS2C.TYPE, HighlightBlocksS2C.STREAM_CODEC, HighlightBlocksS2C::handle);
+        registrar.playToClient(ShowHintToastS2C.TYPE, ShowHintToastS2C.STREAM_CODEC, ShowHintToastS2C::handle);
     }
 
     public static void sendTo(@Nullable ServerPlayer player, CustomPacketPayload packet) {
