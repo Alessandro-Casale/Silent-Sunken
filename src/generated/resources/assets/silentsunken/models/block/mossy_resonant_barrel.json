@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "silentsunken:block/mossy_resonant_barrel_bottom",
+    "east": "silentsunken:block/mossy_resonant_barrel_east",
+    "north": "silentsunken:block/mossy_resonant_barrel_north",
+    "particle": "silentsunken:block/mossy_resonant_barrel_north",
+    "south": "silentsunken:block/mossy_resonant_barrel_south",
+    "up": "silentsunken:block/mossy_resonant_barrel_top",
+    "west": "silentsunken:block/mossy_resonant_barrel_west"
+  }
+}

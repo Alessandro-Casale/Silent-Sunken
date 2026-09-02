@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "silentsunken:item/purple_fragment_corner_4"
+  }
+}

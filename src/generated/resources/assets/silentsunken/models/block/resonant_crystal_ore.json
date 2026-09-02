@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "silentsunken:block/resonant_stone"
+    "all": "silentsunken:block/resonant_crystal_ore"
   }
 }

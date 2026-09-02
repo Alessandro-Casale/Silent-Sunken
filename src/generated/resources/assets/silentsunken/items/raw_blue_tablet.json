@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "silentsunken:block/resonant_stone"
+    "model": "silentsunken:item/raw_blue_tablet"
   }
 }
