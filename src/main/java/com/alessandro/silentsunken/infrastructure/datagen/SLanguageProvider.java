@@ -36,7 +36,7 @@ public class SLanguageProvider extends LanguageProvider {
         add("itemGroup.silentsunken", "Silent Sunken");
     }
 
-    public void mapFragmentsAndTablets(List<DeferredItem<Item>> items, String type) {
+    public void mapFragmentsAndTablets(List<DeferredItem<? extends Item>> items, String type) {
         addItem(items.getFirst(), type + " Fragment (First Corner)");
         addItem(items.get(1), type + " Fragment (Second Corner)");
         addItem(items.get(2), type + " Fragment (Third Corner)");

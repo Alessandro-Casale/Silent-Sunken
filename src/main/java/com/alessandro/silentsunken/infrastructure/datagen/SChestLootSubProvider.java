@@ -131,7 +131,7 @@ public class SChestLootSubProvider implements LootTableSubProvider {
         return pool;
     }
 
-    private void addFragmentCorners(LootPool.Builder pool, List<DeferredItem<Item>> fragmentsAndTables) {
+    private void addFragmentCorners(LootPool.Builder pool, List<DeferredItem<? extends Item>> fragmentsAndTables) {
         fragmentsAndTables.subList(0, 4).forEach(item -> LootUtils.item(pool, item));
     }
 
