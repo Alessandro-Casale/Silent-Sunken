@@ -1,0 +1,9 @@
+{
+  "material": "blue",
+  "counterpart_material": "minecraft:diamond",
+  "color": "#3D9DFF",
+  "corners": ["silentsunken:blue_fragment_corner_1", "silentsunken:blue_fragment_corner_2", "silentsunken:blue_fragment_corner_3", "silentsunken:blue_fragment_corner_4"],
+  "raw_tablet": "silentsunken:raw_blue_tablet",
+  "gilded_tablet": "silentsunken:gilded_blue_tablet",
+  "required_gold_ingots_for_conversion": 5
+}
