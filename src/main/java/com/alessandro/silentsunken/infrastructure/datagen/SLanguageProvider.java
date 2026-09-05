@@ -34,6 +34,15 @@ public class SLanguageProvider extends LanguageProvider {
         add("container.silentsunken.resonant_crate", "Resonant Barrel");
         add("container.silentsunken.mossy_resonant_crate", "Mossy Resonant Barrel");
         add("itemGroup.silentsunken", "Silent Sunken");
+
+        add("message.silentsunken.historian.fragment_accepted", "The historian sets the fragment in place. (%s/4 gathered)");
+        add("message.silentsunken.historian.corner_occupied", "That corner already holds a fragment.");
+        add("message.silentsunken.historian.missing_material", "The historian is missing %s x %s to finish this tablet.");
+        add("message.silentsunken.historian.invalid_material", "That's not what the historian needs. It's still waiting for %s x %s.");
+        add("message.silentsunken.historian.invalid_count", "The historian needs %s of that before it can continue.");
+        add("message.silentsunken.historian.waiting_for_fragments", "The historian is still waiting for its four fragments.");
+        add("message.silentsunken.historian.crafting_started", "The historian begins crafting the tablet.");
+        add("message.silentsunken.historian.result_given", "The historian hands you a %s!");
     }
 
     public void mapFragmentsAndTablets(List<DeferredItem<? extends Item>> items, String type) {

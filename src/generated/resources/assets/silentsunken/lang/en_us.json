@@ -36,5 +36,13 @@
   "item.silentsunken.yellow_fragment_corner_2": "Yellow Fragment (Second Corner)",
   "item.silentsunken.yellow_fragment_corner_3": "Yellow Fragment (Third Corner)",
   "item.silentsunken.yellow_fragment_corner_4": "Yellow Fragment (Fourth Corner)",
-  "itemGroup.silentsunken": "Silent Sunken"
+  "itemGroup.silentsunken": "Silent Sunken",
+  "message.silentsunken.historian.corner_occupied": "That corner already holds a fragment.",
+  "message.silentsunken.historian.crafting_started": "The historian begins crafting the tablet.",
+  "message.silentsunken.historian.fragment_accepted": "The historian sets the fragment in place. (%s/4 gathered)",
+  "message.silentsunken.historian.invalid_count": "The historian needs %s of that before it can continue.",
+  "message.silentsunken.historian.invalid_material": "That's not what the historian needs. It's still waiting for %s x %s.",
+  "message.silentsunken.historian.missing_material": "The historian is missing %s x %s to finish this tablet.",
+  "message.silentsunken.historian.result_given": "The historian hands you a %s!",
+  "message.silentsunken.historian.waiting_for_fragments": "The historian is still waiting for its four fragments."
 }
