@@ -1,9 +1,6 @@
 package com.alessandro.silentsunken;
 
-import com.alessandro.silentsunken.infrastructure.registry.SilentBlockEntities;
-import com.alessandro.silentsunken.infrastructure.registry.SilentBlocks;
-import com.alessandro.silentsunken.infrastructure.registry.SilentCreativeModeTabs;
-import com.alessandro.silentsunken.infrastructure.registry.SilentItems;
+import com.alessandro.silentsunken.infrastructure.registry.*;
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -20,5 +17,6 @@ public class SilentSunken {
         SilentBlocks.BLOCKS.register(modEventBus);
         SilentBlockEntities.BLOCK_ENTITIES.register(modEventBus);
         SilentCreativeModeTabs.CREATIVE_MODE_TABS.register(modEventBus);
+        SilentVillagerProfessions.VILLAGER_PROFESSIONS.register(modEventBus);
     }
 }
