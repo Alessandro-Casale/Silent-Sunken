@@ -43,6 +43,10 @@ public class SLanguageProvider extends LanguageProvider {
         add("message.silentsunken.historian.waiting_for_fragments", "The historian is still waiting for its four fragments.");
         add("message.silentsunken.historian.crafting_started", "The historian begins crafting the tablet.");
         add("message.silentsunken.historian.result_given", "The historian hands you a %s!");
+
+        add("message.silentsunken.gilding.missing_tablet", "There's no raw tablet resting on the anvil to gild.");
+        add("message.silentsunken.gilding.missing_gold", "The anvil needs %s more gold ingot(s) to gild this tablet.");
+        add("message.silentsunken.gilding.success", "The resonant hammer strikes true - you've gilded a %s!");
     }
 
     public void mapFragmentsAndTablets(List<DeferredItem<? extends Item>> items, String type) {
