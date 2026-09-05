@@ -1,0 +1,9 @@
+{
+  "material": "green",
+  "counterpart_material": "minecraft:emerald",
+  "color": "#46D46A",
+  "corners": ["silentsunken:green_fragment_corner_1", "silentsunken:green_fragment_corner_2", "silentsunken:green_fragment_corner_3", "silentsunken:green_fragment_corner_4"],
+  "raw_tablet": "silentsunken:raw_green_tablet",
+  "gilded_tablet": "silentsunken:gilded_green_tablet",
+  "required_gold_ingots_for_conversion": 5
+}

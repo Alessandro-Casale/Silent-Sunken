@@ -1,0 +1,9 @@
+{
+  "material": "red",
+  "counterpart_material": "minecraft:redstone",
+  "color": "#E0483E",
+  "corners": ["silentsunken:red_fragment_corner_1", "silentsunken:red_fragment_corner_2", "silentsunken:red_fragment_corner_3", "silentsunken:red_fragment_corner_4"],
+  "raw_tablet": "silentsunken:raw_red_tablet",
+  "gilded_tablet": "silentsunken:gilded_red_tablet",
+  "required_gold_ingots_for_conversion": 5
+}
