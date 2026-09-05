@@ -1,7 +1,10 @@
 package com.alessandro.silentsunken.infrastructure.registry;
 
 import com.alessandro.silentsunken.SilentSunken;
-import com.alessandro.silentsunken.api.nullability.NotNullMethodsReturn;
+import com.alessandro.silentsunken.api.nullability.NotNullParamsAndMethodsReturn;
+import com.alessandro.silentsunken.infrastructure.codec.SoundMaterial;
+import com.alessandro.silentsunken.infrastructure.item.FragmentItem;
+import com.alessandro.silentsunken.infrastructure.item.RawTabletItem;
 import com.alessandro.silentsunken.infrastructure.item.ResonantHammerItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -12,7 +15,7 @@ import org.jetbrains.annotations.UnmodifiableView;
 
 import java.util.List;
 
-@NotNullMethodsReturn
+@NotNullParamsAndMethodsReturn
 public class SilentItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(SilentSunken.MODID);
 
@@ -28,20 +31,20 @@ public class SilentItems {
             // .repairable() // TODO: Choose repair material
     );
 
-    public static List<DeferredItem<Item>> BLUE_FRAGMENTS_AND_TABLES = fragmentsAndTables("blue");
-    public static List<DeferredItem<Item>> GREEN_FRAGMENTS_AND_TABLES = fragmentsAndTables("green");
-    public static List<DeferredItem<Item>> RED_FRAGMENTS_AND_TABLES = fragmentsAndTables("red");
-    public static List<DeferredItem<Item>> YELLOW_FRAGMENTS_AND_TABLES = fragmentsAndTables("yellow");
-    public static List<DeferredItem<Item>> PURPLE_FRAGMENTS_AND_TABLES = fragmentsAndTables("purple");
+    public static List<DeferredItem<? extends Item>> BLUE_FRAGMENTS_AND_TABLES = fragmentsAndTables(SoundMaterial.BLUE);
+    public static List<DeferredItem<? extends Item>> GREEN_FRAGMENTS_AND_TABLES = fragmentsAndTables(SoundMaterial.GREEN);
+    public static List<DeferredItem<? extends Item>> RED_FRAGMENTS_AND_TABLES = fragmentsAndTables(SoundMaterial.RED);
+    public static List<DeferredItem<? extends Item>> YELLOW_FRAGMENTS_AND_TABLES = fragmentsAndTables(SoundMaterial.YELLOW);
+    public static List<DeferredItem<? extends Item>> PURPLE_FRAGMENTS_AND_TABLES = fragmentsAndTables(SoundMaterial.PURPLE);
 
-    public static @UnmodifiableView List<DeferredItem<Item>> fragmentsAndTables(String type) {
-        var fragmentCorner1 = ITEMS.registerSimpleItem(type + "_fragment_corner_1", Item.Properties::new);
-        var fragmentCorner2 = ITEMS.registerSimpleItem(type + "_fragment_corner_2", Item.Properties::new);
-        var fragmentCorner3 = ITEMS.registerSimpleItem(type + "_fragment_corner_3", Item.Properties::new);
-        var fragmentCorner4 = ITEMS.registerSimpleItem(type + "_fragment_corner_4", Item.Properties::new);
+    public static @UnmodifiableView List<DeferredItem<? extends Item>> fragmentsAndTables(SoundMaterial soundMaterial) {
+        var fragmentCorner1 = ITEMS.registerItem(soundMaterial.type() + "_fragment_corner_1", properties -> new FragmentItem(properties, soundMaterial, 1), Item.Properties::new);
+        var fragmentCorner2 = ITEMS.registerItem(soundMaterial.type() + "_fragment_corner_2", properties -> new FragmentItem(properties, soundMaterial, 2), Item.Properties::new);
+        var fragmentCorner3 = ITEMS.registerItem(soundMaterial.type() + "_fragment_corner_3", properties -> new FragmentItem(properties, soundMaterial, 3), Item.Properties::new);
+        var fragmentCorner4 = ITEMS.registerItem(soundMaterial.type() + "_fragment_corner_4", properties -> new FragmentItem(properties, soundMaterial, 4), Item.Properties::new);
 
-        var rawTablet = ITEMS.registerSimpleItem("raw_" + type + "_tablet", Item.Properties::new);
-        var gildedTablet = ITEMS.registerSimpleItem("gilded_" + type + "_tablet", Item.Properties::new);
+        var rawTablet = ITEMS.registerItem("raw_" + soundMaterial.type() + "_tablet", properties -> new RawTabletItem(properties, soundMaterial), Item.Properties::new);
+        var gildedTablet = ITEMS.registerSimpleItem("gilded_" + soundMaterial.type() + "_tablet", Item.Properties::new);
 
         return List.of(fragmentCorner1, fragmentCorner2, fragmentCorner3, fragmentCorner4, rawTablet, gildedTablet);
     }
