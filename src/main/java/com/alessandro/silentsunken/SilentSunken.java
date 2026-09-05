@@ -19,5 +19,6 @@ public class SilentSunken {
         SilentCreativeModeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         SilentVillagerProfessions.VILLAGER_PROFESSIONS.register(modEventBus);
         SilentParticles.PARTICLE_TYPES.register(modEventBus);
+        SilentAttachments.ATTACHMENT_TYPES.register(modEventBus);
     }
 }
