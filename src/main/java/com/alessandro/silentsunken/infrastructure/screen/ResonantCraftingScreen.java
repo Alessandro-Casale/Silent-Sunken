@@ -9,11 +9,8 @@ import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Inventory;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 
 @NotNullParams
-@OnlyIn(Dist.CLIENT)
 public class ResonantCraftingScreen extends AbstractContainerScreen<ResonantCraftingMenu> {
     private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(SilentSunken.MODID, "textures/gui/container/resonant_crafting_table.png");
 
