@@ -29,5 +29,6 @@ public class SLootSubProvider extends BlockLootSubProvider {
         dropSelf(SilentBlocks.RESONANT_CRYSTAL_ORE.get());
         add(SilentBlocks.RESONANT_BARREL.get(), this::createNameableBlockEntityTable);
         add(SilentBlocks.MOSSY_RESONANT_BARREL.get(), this::createNameableBlockEntityTable);
+        add(SilentBlocks.RESONANT_CRAFTING_TABLE.get(), this::createNameableBlockEntityTable);
     }
 }

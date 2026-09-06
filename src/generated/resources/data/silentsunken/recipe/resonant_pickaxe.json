@@ -1,0 +1,16 @@
+{
+  "type": "silentsunken:resonant_crafting",
+  "catalyst": "silentsunken:gilded_blue_tablet",
+  "key": {
+    "X": "silentsunken:resonant_crystal",
+    "Y": "minecraft:stick"
+  },
+  "pattern": [
+    "XXX",
+    " Y ",
+    " Y "
+  ],
+  "result": {
+    "id": "silentsunken:resonant_pickaxe"
+  }
+}

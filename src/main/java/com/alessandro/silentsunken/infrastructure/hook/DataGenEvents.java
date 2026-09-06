@@ -21,6 +21,8 @@ public class DataGenEvents {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent.Client event) {
         event.createProvider(SBlockTagsProvider::new);
+        event.createProvider(SItemTagsProvider::new);
+        event.createProvider(SRecipeProvider.Runner::new);
         event.createProvider(SBiomeTagsProvider::new);
         event.createProvider(SLanguageProvider::new);
         event.createProvider(SModelProvider::new);

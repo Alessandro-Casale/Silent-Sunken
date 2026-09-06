@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "silentsunken:block/resonant_crafting_table_bottom",
+    "east": "silentsunken:block/resonant_crafting_table_side",
+    "north": "silentsunken:block/resonant_crafting_table_front",
+    "particle": "silentsunken:block/resonant_crafting_table_front",
+    "south": "silentsunken:block/resonant_crafting_table_side",
+    "up": "silentsunken:block/resonant_crafting_table_top",
+    "west": "silentsunken:block/resonant_crafting_table_side"
+  }
+}

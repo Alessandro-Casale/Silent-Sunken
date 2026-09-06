@@ -2,6 +2,7 @@ package com.alessandro.silentsunken.infrastructure.registry;
 
 import com.alessandro.silentsunken.SilentSunken;
 import com.alessandro.silentsunken.infrastructure.block.MossyResonantBarrelBlock;
+import com.alessandro.silentsunken.infrastructure.block.ResonantCraftingTableBlock;
 import com.alessandro.silentsunken.infrastructure.block.ResonantBarrelBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -31,5 +32,11 @@ public class SilentBlocks {
             .strength(22.5f, 600.0f)
             .sound(SoundType.MOSS)
             .noOcclusion()
+    );
+
+    public static final DeferredBlock<ResonantCraftingTableBlock> RESONANT_CRAFTING_TABLE = BLOCKS.registerBlock("resonant_crafting_table", ResonantCraftingTableBlock::new, properties ->
+        properties
+            .strength(2.5f, 6.0f)
+            .sound(SoundType.WOOD)
     );
 }

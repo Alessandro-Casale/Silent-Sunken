@@ -6,6 +6,7 @@ import com.alessandro.silentsunken.api.nullability.Nullable;
 import com.alessandro.silentsunken.api.resonance.SoundSensible;
 import com.alessandro.silentsunken.engine.SilentManager;
 import com.alessandro.silentsunken.infrastructure.block.BaseResonantBarrelBlock;
+import com.alessandro.silentsunken.infrastructure.registry.SilentCriteriaTriggers;
 import com.google.common.collect.Lists;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
@@ -14,10 +15,14 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -96,6 +101,18 @@ public abstract class BaseResonantBarrelBlockEntity extends RandomizableContaine
         if (level instanceof ServerLevel serverLevel) {
             SilentManager.SOUND_LISTENER_INSTANCE.unregister(serverLevel, getBlockPos());
         }
+    }
+
+    @Override
+    public @Nullable AbstractContainerMenu createMenu(int containerId, Inventory inventory, Player player) {
+        var hadRuinsLoot = LOOT_TABLE.equals(this.lootTable);
+        var menu = super.createMenu(containerId, inventory, player);
+
+        if (menu != null && hadRuinsLoot && player instanceof ServerPlayer serverPlayer) {
+            SilentCriteriaTriggers.BARREL_OPENED.get().trigger(serverPlayer);
+        }
+
+        return menu;
     }
 
     @Override

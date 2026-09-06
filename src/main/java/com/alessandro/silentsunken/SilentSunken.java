@@ -20,5 +20,8 @@ public class SilentSunken {
         SilentVillagerProfessions.VILLAGER_PROFESSIONS.register(modEventBus);
         SilentParticles.PARTICLE_TYPES.register(modEventBus);
         SilentAttachments.ATTACHMENT_TYPES.register(modEventBus);
+        SilentRecipeTypes.RECIPE_TYPES.register(modEventBus);
+        SilentRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
+        SilentMenuTypes.MENU_TYPES.register(modEventBus);
     }
 }
