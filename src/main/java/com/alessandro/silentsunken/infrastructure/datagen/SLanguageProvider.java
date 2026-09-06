@@ -20,6 +20,7 @@ public class SLanguageProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         addItem(SilentItems.RESONANT_HAMMER, "Resonant Hammer");
+        addItem(SilentItems.RESONANT_PICKAXE, "Resonant Pickaxe");
         addItem(SilentItems.RESONANT_CRYSTAL, "Resonant Crystal");
         mapFragmentsAndTablets(SilentItems.BLUE_FRAGMENTS_AND_TABLES, "Blue");
         mapFragmentsAndTablets(SilentItems.GREEN_FRAGMENTS_AND_TABLES, "Green");
@@ -30,9 +31,11 @@ public class SLanguageProvider extends LanguageProvider {
         addBlock(SilentBlocks.RESONANT_CRYSTAL_ORE, "Resonant Crystal Ore");
         addBlock(SilentBlocks.RESONANT_BARREL, "Resonant Barrel");
         addBlock(SilentBlocks.MOSSY_RESONANT_BARREL, "Mossy Resonant Barrel");
+        addBlock(SilentBlocks.RESONANT_CRAFTING_TABLE, "Resonant Crafting Table");
 
         add("container.silentsunken.resonant_crate", "Resonant Barrel");
         add("container.silentsunken.mossy_resonant_crate", "Mossy Resonant Barrel");
+        add("container.silentsunken.resonant_crafting_table", "Resonant Crafting Table");
         add("itemGroup.silentsunken", "Silent Sunken");
 
         add("message.silentsunken.historian.fragment_accepted", "The historian sets the fragment in place. (%s/4 gathered)");

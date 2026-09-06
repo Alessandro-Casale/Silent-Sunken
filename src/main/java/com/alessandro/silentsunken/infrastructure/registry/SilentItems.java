@@ -5,6 +5,8 @@ import com.alessandro.silentsunken.api.nullability.NotNullParamsAndMethodsReturn
 import com.alessandro.silentsunken.infrastructure.codec.SoundMaterial;
 import com.alessandro.silentsunken.infrastructure.item.FragmentItem;
 import com.alessandro.silentsunken.infrastructure.item.RawTabletItem;
+import com.alessandro.silentsunken.infrastructure.item.ResonantPickaxeItem;
+import com.alessandro.silentsunken.infrastructure.item.SilentToolMaterials;
 import com.alessandro.silentsunken.infrastructure.item.ResonantHammerItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -23,12 +25,19 @@ public class SilentItems {
     public static final DeferredItem<Item> RESONANT_CRYSTAL = ITEMS.registerSimpleItem("resonant_crystal");
     public static final DeferredItem<BlockItem> RESONANT_BARREL = ITEMS.registerSimpleBlockItem(SilentBlocks.RESONANT_BARREL);
     public static final DeferredItem<BlockItem> MOSSY_RESONANT_BARREL = ITEMS.registerSimpleBlockItem(SilentBlocks.MOSSY_RESONANT_BARREL);
+    public static final DeferredItem<BlockItem> RESONANT_CRAFTING_TABLE = ITEMS.registerSimpleBlockItem(SilentBlocks.RESONANT_CRAFTING_TABLE);
     public static final DeferredItem<Item> RESONANT_HAMMER = ITEMS.registerItem("resonant_hammer", ResonantHammerItem::new, properties ->
         properties
             .durability(120)
             .rarity(Rarity.UNCOMMON)
             .useCooldown(5)
             // .repairable() // TODO: Choose repair material
+    );
+
+    public static final DeferredItem<Item> RESONANT_PICKAXE = ITEMS.registerItem("resonant_pickaxe", ResonantPickaxeItem::new, properties ->
+        properties
+            .rarity(Rarity.EPIC)
+            .pickaxe(SilentToolMaterials.RESONANT, 1.0f, -2.8f)
     );
 
     public static List<DeferredItem<? extends Item>> BLUE_FRAGMENTS_AND_TABLES = fragmentsAndTables(SoundMaterial.BLUE);

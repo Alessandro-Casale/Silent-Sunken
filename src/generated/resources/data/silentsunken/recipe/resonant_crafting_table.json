@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:crafting_table",
+    "G": "minecraft:gold_block",
+    "R": "silentsunken:resonant_crystal",
+    "X": "minecraft:spruce_log"
+  },
+  "pattern": [
+    "XRX",
+    "GAG",
+    "XGX"
+  ],
+  "result": {
+    "id": "silentsunken:resonant_crafting_table"
+  }
+}

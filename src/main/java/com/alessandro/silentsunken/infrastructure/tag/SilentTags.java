@@ -17,6 +17,8 @@ public class SilentTags {
 
     public static TagKey<Biome> HAS_STRUCTURE_RUINS = biome("has_structure/ruins");
 
+    public static TagKey<Item> REPAIRS_RESONANT_TOOLS = item("repairs_resonant_tools");
+
     public static TagKey<Item> item(String identifier) {
         return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(SilentSunken.MODID, identifier));
     }

@@ -26,10 +26,12 @@ public class SModelProvider extends ModelProvider {
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         itemModels.generateFlatItem(SilentItems.RESONANT_HAMMER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(SilentItems.RESONANT_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(SilentItems.RESONANT_CRYSTAL.get(), ModelTemplates.FLAT_ITEM);
         blockModels.createTrivialCube(SilentBlocks.RESONANT_CRYSTAL_ORE.get());
         createResonantBarrel(blockModels, SilentBlocks.RESONANT_BARREL.get());
         createResonantBarrel(blockModels, SilentBlocks.MOSSY_RESONANT_BARREL.get());
+        createResonantCraftingTable(blockModels, SilentBlocks.RESONANT_CRAFTING_TABLE.get());
 
         SilentItems.BLUE_FRAGMENTS_AND_TABLES.forEach(item -> itemModels.generateFlatItem(item.get(), ModelTemplates.FLAT_ITEM));
         SilentItems.GREEN_FRAGMENTS_AND_TABLES.forEach(item -> itemModels.generateFlatItem(item.get(), ModelTemplates.FLAT_ITEM));
@@ -62,5 +64,19 @@ public class SModelProvider extends ModelProvider {
                     .select(true, BlockModelGenerators.plainVariant(openModel)))
                 .with(BlockModelGenerators.ROTATIONS_COLUMN_WITH_FACING)
         );
+    }
+
+    private void createResonantCraftingTable(BlockModelGenerators blockModels, Block block) {
+        TextureMapping textures = new TextureMapping()
+            .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(block, "_front"))
+            .put(TextureSlot.NORTH, TextureMapping.getBlockTexture(block, "_front"))
+            .put(TextureSlot.SOUTH, TextureMapping.getBlockTexture(block, "_side"))
+            .put(TextureSlot.EAST, TextureMapping.getBlockTexture(block, "_side"))
+            .put(TextureSlot.WEST, TextureMapping.getBlockTexture(block, "_side"))
+            .put(TextureSlot.UP, TextureMapping.getBlockTexture(block, "_top"))
+            .put(TextureSlot.DOWN, TextureMapping.getBlockTexture(block, "_bottom"));
+
+        Identifier model = ModelTemplates.CUBE.create(block, textures, blockModels.modelOutput);
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, BlockModelGenerators.plainVariant(model)));
     }
 }

@@ -3,6 +3,7 @@ package com.alessandro.silentsunken.infrastructure.registry;
 import com.alessandro.silentsunken.SilentSunken;
 import com.alessandro.silentsunken.infrastructure.blockentity.MossyResonantBarrelBlockEntity;
 import com.alessandro.silentsunken.infrastructure.blockentity.ResonantBarrelBlockEntity;
+import com.alessandro.silentsunken.infrastructure.blockentity.ResonantCraftingTableBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -19,5 +20,10 @@ public class SilentBlockEntities {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MossyResonantBarrelBlockEntity>> MOSSY_RESONANT_CRATE = BLOCK_ENTITIES.register(
         "mossy_resonant_barrel",
         () -> new BlockEntityType<>(MossyResonantBarrelBlockEntity::new, SilentBlocks.MOSSY_RESONANT_BARREL.get())
+    );
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ResonantCraftingTableBlockEntity>> RESONANT_CRAFTING_TABLE = BLOCK_ENTITIES.register(
+        "resonant_crafting_table",
+        () -> new BlockEntityType<>(ResonantCraftingTableBlockEntity::new, SilentBlocks.RESONANT_CRAFTING_TABLE.get())
     );
 }

@@ -23,6 +23,8 @@ public class SBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(SilentBlocks.RESONANT_CRYSTAL_ORE.get());
         tag(BlockTags.NEEDS_STONE_TOOL).add(SilentBlocks.RESONANT_CRYSTAL_ORE.get());
 
+        tag(BlockTags.MINEABLE_WITH_AXE).add(SilentBlocks.RESONANT_CRAFTING_TABLE.get());
+
         tag(SilentTags.CLICKABLE_WITH_RESONANT_HAMMER)
             .add(Blocks.COBBLESTONE)
             .add(Blocks.STONE)

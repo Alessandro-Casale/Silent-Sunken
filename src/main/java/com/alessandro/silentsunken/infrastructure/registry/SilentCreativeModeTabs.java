@@ -20,7 +20,9 @@ public class SilentCreativeModeTabs {
             output.accept(SilentItems.RESONANT_CRYSTAL);
             output.accept(SilentItems.RESONANT_BARREL);
             output.accept(SilentItems.MOSSY_RESONANT_BARREL);
+            output.accept(SilentItems.RESONANT_CRAFTING_TABLE);
             output.accept(SilentItems.RESONANT_HAMMER);
+            output.accept(SilentItems.RESONANT_PICKAXE);
 
             SilentItems.BLUE_FRAGMENTS_AND_TABLES.forEach(output::accept);
             SilentItems.GREEN_FRAGMENTS_AND_TABLES.forEach(output::accept);
