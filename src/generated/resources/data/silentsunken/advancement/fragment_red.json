@@ -1,0 +1,66 @@
+{
+  "parent": "silentsunken:ruins_barrel_opened",
+  "criteria": {
+    "corner_1": {
+      "conditions": {
+        "items": [
+          {
+            "items": "silentsunken:red_fragment_corner_1"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "corner_2": {
+      "conditions": {
+        "items": [
+          {
+            "items": "silentsunken:red_fragment_corner_2"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "corner_3": {
+      "conditions": {
+        "items": [
+          {
+            "items": "silentsunken:red_fragment_corner_3"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "corner_4": {
+      "conditions": {
+        "items": [
+          {
+            "items": "silentsunken:red_fragment_corner_4"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.silentsunken.fragment_red.description"
+    },
+    "icon": {
+      "id": "silentsunken:red_fragment_corner_1"
+    },
+    "title": {
+      "translate": "advancements.silentsunken.fragment_red.title"
+    }
+  },
+  "requirements": [
+    [
+      "corner_1",
+      "corner_2",
+      "corner_3",
+      "corner_4"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

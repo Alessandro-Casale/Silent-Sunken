@@ -1,0 +1,34 @@
+{
+  "parent": "silentsunken:raw_blue_tablet",
+  "criteria": {
+    "obtained": {
+      "conditions": {
+        "items": [
+          {
+            "items": "silentsunken:gilded_blue_tablet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.silentsunken.gilded_blue_tablet.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "id": "silentsunken:gilded_blue_tablet"
+    },
+    "title": {
+      "translate": "advancements.silentsunken.gilded_blue_tablet.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

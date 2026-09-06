@@ -5,12 +5,14 @@ import com.alessandro.silentsunken.api.nullability.NotNullParams;
 import com.alessandro.silentsunken.infrastructure.codec.SoundMaterial;
 import com.alessandro.silentsunken.infrastructure.item.RawTabletItem;
 import com.alessandro.silentsunken.infrastructure.item.ResonantHammerItem;
+import com.alessandro.silentsunken.infrastructure.registry.SilentCriteriaTriggers;
 import com.alessandro.silentsunken.infrastructure.resource.SoundMaterialDefinitions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
@@ -94,6 +96,10 @@ public class InWorldInteractionEvents {
 
         gildingSuccessFeedback(level, pos, definition.color());
         player.sendOverlayMessage(Component.translatable("message.silentsunken.gilding.success", gildedTablet.getHoverName()));
+
+        if (player instanceof ServerPlayer serverPlayer) {
+            SilentCriteriaTriggers.TABLET_GILDED.get().trigger(serverPlayer);
+        }
     }
 
     private static void consumeGold(List<ItemEntity> goldEntities, int amountNeeded) {

@@ -1,0 +1,26 @@
+{
+  "parent": "silentsunken:ruins_barrel_opened",
+  "criteria": {
+    "triggered": {
+      "trigger": "silentsunken:historian_converted"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.silentsunken.historian_villager.description"
+    },
+    "icon": {
+      "id": "minecraft:villager_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.silentsunken.historian_villager.title"
+    }
+  },
+  "requirements": [
+    [
+      "triggered"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

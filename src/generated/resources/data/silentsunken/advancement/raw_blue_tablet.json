@@ -1,0 +1,33 @@
+{
+  "parent": "silentsunken:fragment_blue",
+  "criteria": {
+    "obtained": {
+      "conditions": {
+        "items": [
+          {
+            "items": "silentsunken:raw_blue_tablet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.silentsunken.raw_blue_tablet.description"
+    },
+    "icon": {
+      "id": "silentsunken:raw_blue_tablet"
+    },
+    "title": {
+      "translate": "advancements.silentsunken.raw_blue_tablet.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

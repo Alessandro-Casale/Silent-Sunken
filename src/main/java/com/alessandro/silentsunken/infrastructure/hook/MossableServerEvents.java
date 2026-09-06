@@ -6,9 +6,12 @@ import com.alessandro.silentsunken.api.BlockStateUtils;
 import com.alessandro.silentsunken.api.ContainerUtils;
 import com.alessandro.silentsunken.api.InteractionUtils;
 import com.alessandro.silentsunken.api.nullability.NotNullParams;
+import com.alessandro.silentsunken.infrastructure.registry.SilentBlocks;
+import com.alessandro.silentsunken.infrastructure.registry.SilentCriteriaTriggers;
 import com.alessandro.silentsunken.infrastructure.registry.SilentDataMaps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -53,7 +56,7 @@ public class MossableServerEvents {
         }
 
         boolean handled = isApply
-            ? applyMoss(serverLevel, stack, pos, originalState, mossVariantData.mossyVariant())
+            ? applyMoss(player, serverLevel, stack, pos, originalState, mossVariantData.mossyVariant())
             : removeMoss(player, hand, serverLevel, stack, pos, originalState, nonMossVariant);
 
         if (handled) {
@@ -61,7 +64,7 @@ public class MossableServerEvents {
         }
     }
 
-    private static boolean applyMoss(ServerLevel level, ItemStack moss, BlockPos pos, BlockState originalState, Block mossVariant) {
+    private static boolean applyMoss(Player player, ServerLevel level, ItemStack moss, BlockPos pos, BlockState originalState, Block mossVariant) {
         var newState = BlockStateUtils.copyProperties(originalState, mossVariant);
         if (!ContainerUtils.areContainersCompatible(level, pos, newState)) { return false; }
 
@@ -71,6 +74,11 @@ public class MossableServerEvents {
         BlockEntityUtils.restoreData(level, pos, data);
 
         moss.shrink(1);
+
+        if (mossVariant != SilentBlocks.MOSSY_RESONANT_BARREL.get() && player instanceof ServerPlayer serverPlayer) {
+            SilentCriteriaTriggers.MOSS_APPLIED.get().trigger(serverPlayer);
+        }
+
         return true;
     }
 
@@ -83,6 +91,15 @@ public class MossableServerEvents {
         level.setBlockAndUpdate(pos, newState);
         BlockEntityUtils.restoreData(level, pos, data);
         axe.hurtAndBreak(1, player, hand.asEquipmentSlot());
+
+        if (player instanceof ServerPlayer serverPlayer) {
+            SilentCriteriaTriggers.MOSS_REMOVED.get().trigger(serverPlayer);
+
+            if (nonMossVariant == SilentBlocks.RESONANT_BARREL.get()) {
+                SilentCriteriaTriggers.BARREL_UNMOSSED.get().trigger(serverPlayer);
+            }
+        }
+
         return true;
     }
 }

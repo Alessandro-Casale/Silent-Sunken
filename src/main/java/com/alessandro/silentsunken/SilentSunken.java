@@ -23,5 +23,6 @@ public class SilentSunken {
         SilentRecipeTypes.RECIPE_TYPES.register(modEventBus);
         SilentRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
         SilentMenuTypes.MENU_TYPES.register(modEventBus);
+        SilentCriteriaTriggers.TRIGGER_TYPES.register(modEventBus);
     }
 }

@@ -2,11 +2,14 @@ package com.alessandro.silentsunken.infrastructure.hook;
 
 import com.alessandro.silentsunken.SilentSunken;
 import com.alessandro.silentsunken.api.nullability.NotNullParams;
+import com.alessandro.silentsunken.infrastructure.registry.SilentCriteriaTriggers;
 import com.alessandro.silentsunken.infrastructure.registry.SilentItems;
 import com.alessandro.silentsunken.infrastructure.registry.SilentParticles;
 import com.alessandro.silentsunken.infrastructure.registry.SilentVillagerProfessions;
 import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.ARGB;
@@ -18,11 +21,14 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 
+import java.util.UUID;
+
 @NotNullParams
 @EventBusSubscriber(modid = SilentSunken.MODID)
 public class VillagerEvents {
     private static final int FREEZE_TICKS = 60;
     private static final String FREEZE_UNTIL_TAG = "silentsunken_historian_freeze_until";
+    private static final String FREEZE_PLAYER_TAG = "silentsunken_historian_freeze_player";
 
     private static final int SPIRAL_TURNS = 4;
     private static final double SPIRAL_RADIUS = 0.6;
@@ -57,6 +63,7 @@ public class VillagerEvents {
 
         freezeDuringConversion(villager);
         villager.getPersistentData().putLong(FREEZE_UNTIL_TAG, level.getGameTime() + FREEZE_TICKS);
+        villager.getPersistentData().putString(FREEZE_PLAYER_TAG, player.getUUID().toString());
 
         level.playSound(null, villager.blockPosition(), SoundEvents.VILLAGER_WORK_LIBRARIAN, SoundSource.NEUTRAL, 1.0f, 1.0f);
 
@@ -85,11 +92,22 @@ public class VillagerEvents {
             villager.refreshBrain(level);
 
             level.sendParticles(SilentParticles.HISTORIAN_SPARK.get(), villager.getX(), villager.getY() + villager.getBbHeight() / 2.0, villager.getZ(), 14, 0.4, 0.5, 0.4, 0.0);
+            notifyConvertingPlayer(level, data);
+            data.remove(FREEZE_PLAYER_TAG);
             return;
         }
 
         var elapsed = FREEZE_TICKS - remaining;
         spawnSpiralStep(level, villager, (float) elapsed / FREEZE_TICKS);
+    }
+
+    private static void notifyConvertingPlayer(ServerLevel level, CompoundTag data) {
+        if (!data.contains(FREEZE_PLAYER_TAG)) { return; }
+
+        var initiator = level.getServer().getPlayerList().getPlayer(UUID.fromString(data.getStringOr(FREEZE_PLAYER_TAG, "")));
+        if (initiator instanceof ServerPlayer serverPlayer) {
+            SilentCriteriaTriggers.HISTORIAN_CONVERTED.get().trigger(serverPlayer);
+        }
     }
 
     private static void freezeDuringConversion(Villager villager) {
