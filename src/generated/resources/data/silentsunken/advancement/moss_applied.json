@@ -1,0 +1,26 @@
+{
+  "parent": "silentsunken:root",
+  "criteria": {
+    "triggered": {
+      "trigger": "silentsunken:moss_applied"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.silentsunken.moss_applied.description"
+    },
+    "icon": {
+      "id": "minecraft:moss_block"
+    },
+    "title": {
+      "translate": "advancements.silentsunken.moss_applied.title"
+    }
+  },
+  "requirements": [
+    [
+      "triggered"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

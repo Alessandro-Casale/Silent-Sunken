@@ -1,0 +1,26 @@
+{
+  "parent": "silentsunken:resonant_hammer",
+  "criteria": {
+    "triggered": {
+      "trigger": "silentsunken:hammer_scan"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.silentsunken.hammer_scan.description"
+    },
+    "icon": {
+      "id": "minecraft:cobbled_deepslate"
+    },
+    "title": {
+      "translate": "advancements.silentsunken.hammer_scan.title"
+    }
+  },
+  "requirements": [
+    [
+      "triggered"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

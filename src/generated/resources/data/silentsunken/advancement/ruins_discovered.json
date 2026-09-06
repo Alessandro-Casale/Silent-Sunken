@@ -1,0 +1,39 @@
+{
+  "parent": "silentsunken:root",
+  "criteria": {
+    "in_ruins": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "silentsunken:ruins"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.silentsunken.ruins_discovered.description"
+    },
+    "icon": {
+      "id": "minecraft:mossy_stone_bricks"
+    },
+    "title": {
+      "translate": "advancements.silentsunken.ruins_discovered.title"
+    }
+  },
+  "requirements": [
+    [
+      "in_ruins"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

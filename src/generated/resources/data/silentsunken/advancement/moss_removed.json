@@ -1,0 +1,26 @@
+{
+  "parent": "silentsunken:moss_applied",
+  "criteria": {
+    "triggered": {
+      "trigger": "silentsunken:moss_removed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.silentsunken.moss_removed.description"
+    },
+    "icon": {
+      "id": "minecraft:iron_axe"
+    },
+    "title": {
+      "translate": "advancements.silentsunken.moss_removed.title"
+    }
+  },
+  "requirements": [
+    [
+      "triggered"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

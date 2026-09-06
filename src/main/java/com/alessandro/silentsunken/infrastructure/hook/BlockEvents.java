@@ -4,8 +4,9 @@ import com.alessandro.silentsunken.SilentSunken;
 import com.alessandro.silentsunken.api.ResonanceSounds;
 import com.alessandro.silentsunken.api.nullability.NotNullParams;
 import com.alessandro.silentsunken.engine.SilentManager;
+import com.alessandro.silentsunken.infrastructure.registry.SilentCriteriaTriggers;
 import com.alessandro.silentsunken.infrastructure.tag.SilentTags;
-import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
@@ -15,13 +16,13 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 public class BlockEvents {
     @SubscribeEvent
     public static void playerIsBreakingBlock(PlayerEvent.BreakSpeed event) {
-        var player = event.getEntity();
-        if (!(player.level() instanceof ServerLevel level)) { return; }
+        if (!(event.getEntity() instanceof ServerPlayer player)) { return; }
 
         var state = event.getState();
         var rawPos = event.getPosition();
         if (!state.is(SilentTags.DISCOVERABLE_WITH_SCAN_SESSION) || rawPos.isEmpty()) { return; }
 
+        var level = player.level();
         var pos = rawPos.get();
         var random = level.getRandom();
 
@@ -30,6 +31,8 @@ public class BlockEvents {
 
             ResonanceSounds.playImpactSound(level, pos, false);
             SilentManager.OUTLINE_INSTANCE.startScanSession(level, pos, 32, 3, 8, positions);
+
+            SilentCriteriaTriggers.RESONANT_ORE_SCAN.get().trigger(player);
         }
     }
 }

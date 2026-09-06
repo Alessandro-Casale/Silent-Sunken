@@ -1,0 +1,26 @@
+{
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "silentsunken:block/resonant_crystal_ore",
+    "description": {
+      "translate": "advancements.silentsunken.root.description"
+    },
+    "icon": {
+      "id": "silentsunken:resonant_crystal"
+    },
+    "title": {
+      "translate": "advancements.silentsunken.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "tick"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

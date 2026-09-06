@@ -1,0 +1,33 @@
+{
+  "parent": "silentsunken:root",
+  "criteria": {
+    "obtained": {
+      "conditions": {
+        "items": [
+          {
+            "items": "silentsunken:resonant_hammer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.silentsunken.resonant_hammer.description"
+    },
+    "icon": {
+      "id": "silentsunken:resonant_hammer"
+    },
+    "title": {
+      "translate": "advancements.silentsunken.resonant_hammer.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

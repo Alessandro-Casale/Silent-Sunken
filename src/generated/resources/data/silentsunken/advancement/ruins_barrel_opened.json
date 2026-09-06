@@ -1,0 +1,27 @@
+{
+  "parent": "silentsunken:ruins_discovered",
+  "criteria": {
+    "triggered": {
+      "trigger": "silentsunken:barrel_opened"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.silentsunken.ruins_barrel_opened.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "id": "silentsunken:mossy_resonant_barrel"
+    },
+    "title": {
+      "translate": "advancements.silentsunken.ruins_barrel_opened.title"
+    }
+  },
+  "requirements": [
+    [
+      "triggered"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

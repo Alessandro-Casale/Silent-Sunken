@@ -1,0 +1,34 @@
+{
+  "parent": "silentsunken:gilding_anvil",
+  "criteria": {
+    "obtained": {
+      "conditions": {
+        "items": [
+          {
+            "items": "silentsunken:resonant_crafting_table"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.silentsunken.resonant_crafting_table.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "id": "silentsunken:resonant_crafting_table"
+    },
+    "title": {
+      "translate": "advancements.silentsunken.resonant_crafting_table.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

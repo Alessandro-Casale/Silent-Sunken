@@ -1,0 +1,26 @@
+{
+  "parent": "silentsunken:historian_villager",
+  "criteria": {
+    "triggered": {
+      "trigger": "silentsunken:tablet_gilded"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.silentsunken.gilding_anvil.description"
+    },
+    "icon": {
+      "id": "minecraft:anvil"
+    },
+    "title": {
+      "translate": "advancements.silentsunken.gilding_anvil.title"
+    }
+  },
+  "requirements": [
+    [
+      "triggered"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

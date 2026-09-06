@@ -1,0 +1,33 @@
+{
+  "parent": "silentsunken:root",
+  "criteria": {
+    "obtained": {
+      "conditions": {
+        "items": [
+          {
+            "items": "silentsunken:resonant_crystal_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.silentsunken.resonant_crystal_ore.description"
+    },
+    "icon": {
+      "id": "silentsunken:resonant_crystal_ore"
+    },
+    "title": {
+      "translate": "advancements.silentsunken.resonant_crystal_ore.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

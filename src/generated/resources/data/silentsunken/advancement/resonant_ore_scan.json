@@ -1,0 +1,26 @@
+{
+  "parent": "silentsunken:resonant_crystal_ore",
+  "criteria": {
+    "triggered": {
+      "trigger": "silentsunken:resonant_ore_scan"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.silentsunken.resonant_ore_scan.description"
+    },
+    "icon": {
+      "id": "silentsunken:resonant_crystal_ore"
+    },
+    "title": {
+      "translate": "advancements.silentsunken.resonant_ore_scan.title"
+    }
+  },
+  "requirements": [
+    [
+      "triggered"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

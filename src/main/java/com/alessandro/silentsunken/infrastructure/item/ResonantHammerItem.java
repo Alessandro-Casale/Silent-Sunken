@@ -4,9 +4,11 @@ import com.alessandro.silentsunken.api.ResonanceSounds;
 import com.alessandro.silentsunken.api.nullability.NotNullParamsAndMethodsReturn;
 import com.alessandro.silentsunken.api.resonance.ResonanceUpgrade;
 import com.alessandro.silentsunken.engine.SilentManager;
+import com.alessandro.silentsunken.infrastructure.registry.SilentCriteriaTriggers;
 import com.alessandro.silentsunken.infrastructure.tag.SilentTags;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
@@ -36,6 +38,10 @@ public class ResonantHammerItem extends Item implements ResonanceUpgrade {
 
             ResonanceSounds.playImpactSound(level, clickedPos, false);
             SilentManager.OUTLINE_INSTANCE.startScanSession(level, clickedPos, radius, 3, 8, positions);
+
+            if (player instanceof ServerPlayer serverPlayer) {
+                SilentCriteriaTriggers.HAMMER_SCAN.get().trigger(serverPlayer);
+            }
 
             var cooldown = stack.get(DataComponents.USE_COOLDOWN).ticks();
             player.getCooldowns().addCooldown(stack, cooldown);

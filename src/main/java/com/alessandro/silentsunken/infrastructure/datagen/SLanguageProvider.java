@@ -50,6 +50,44 @@ public class SLanguageProvider extends LanguageProvider {
         add("message.silentsunken.gilding.missing_tablet", "There's no raw tablet resting on the anvil to gild.");
         add("message.silentsunken.gilding.missing_gold", "The anvil needs %s more gold ingot(s) to gild this tablet.");
         add("message.silentsunken.gilding.success", "The resonant hammer strikes true - you've gilded a %s!");
+
+        addAdvancementTranslations();
+    }
+
+    private void addAdvancementTranslations() {
+        advancement("root", "Silent Sunken", "Something ancient stirs beneath the surface.");
+
+        advancement("resonant_hammer", "Tuning Fork", "Obtain a Resonant Hammer.");
+        advancement("hammer_scan", "Knock Twice", "Strike stone or deepslate with the Resonant Hammer to start a scan.");
+
+        advancement("resonant_crystal_ore", "A Familiar Hum", "Obtain a Resonant Crystal Ore.");
+        advancement("resonant_crystal", "Crystal Clear", "Obtain a Resonant Crystal.");
+        advancement("resonant_ore_scan", "Caught Resonating", "Start a scan session while breaking a Resonant Crystal Ore.");
+
+        advancement("ruins_discovered", "Beneath the Silence", "Discover the sunken ruins.");
+        advancement("ruins_barrel_opened", "Cracking the Vault", "Solve a Resonant Barrel's sound puzzle and open it.");
+        advancement("barrel_unmossed", "Spring Cleaning", "Scrape the moss off a Resonant Barrel to reveal its fourth row.");
+
+        advancement("moss_applied", "Reclaimed by Nature", "Cover a block in moss.");
+        advancement("moss_removed", "Sharp Edge", "Scrape moss off a block with an axe.");
+
+        advancement("resonant_crafting_table", "A Better Bench", "Obtain a Resonant Crafting Table.");
+        advancement("resonant_pickaxe", "Break the Mold", "Craft a Resonant Pickaxe.");
+
+        advancement("historian_villager", "A New Calling", "Right-click a villager with a Resonant Crystal to turn it into a Historian.");
+        advancement("gilding_anvil", "Touch of Gold", "Drop 5 Gold Ingots and a Raw Tablet on an anvil, then right-click it with the Resonant Hammer.");
+
+        for (var color : new String[] {"Blue", "Green", "Red", "Yellow", "Purple"}) {
+            var id = color.toLowerCase(java.util.Locale.ROOT);
+            advancement("fragment_" + id, "Piece of the Puzzle: " + color, "Find a " + color + " Sound Fragment.");
+            advancement("raw_" + id + "_tablet", "Historian's Craft: " + color, "Have the Historian assemble a Raw " + color + " Tablet.");
+            advancement("gilded_" + id + "_tablet", "Gilded in " + color, "Gild a Raw " + color + " Tablet on an anvil.");
+        }
+    }
+
+    private void advancement(String id, String title, String description) {
+        add("advancements.silentsunken." + id + ".title", title);
+        add("advancements.silentsunken." + id + ".description", description);
     }
 
     public void mapFragmentsAndTablets(List<DeferredItem<? extends Item>> items, String type) {
